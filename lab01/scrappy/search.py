@@ -1,3 +1,4 @@
+# code to search in elasticsearch
 from elasticsearch import Elasticsearch
 
 
@@ -16,7 +17,7 @@ def search(query):
     return es.search(index=es_index, query=query)
 
 
-response = search("Suisse")
+response = search("Britney Spears")
 # print the results
 for hit in response["hits"]["hits"]:
     print(hit["_source"]["name"])
