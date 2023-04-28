@@ -13,10 +13,13 @@ def extract_columns(input_file: str, output_file: str, columns_file: str):
     with open(columns_file) as f:
         columns = json.load(f)
     # read the data
-    data = pd.read_csv(input_file, sep=",", header=0, index_col=False)
+    print("Reading data...")
+    data = pd.read_csv(input_file, sep="\t")
+    print(f"Data read, with {len(data)} rows and {len(data.columns)} columns.")
     # extract the selected columns
     data = data[columns]
     # save the data in a new file
+    print(f"Saving data in {output_file}...")
     data.to_csv(output_file, index=False, sep=",")
 
 
