@@ -1,0 +1,3 @@
+[submodule "projet"]
+	path = projet
+	url = git@github.com:IE-Norway-2021/WEM_additives.git
